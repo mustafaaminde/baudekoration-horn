@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#202923">
+  <meta name="description" content="Baudekoration Horn GmbH in Weiterstadt: Maler- und Tapezierarbeiten, Renovierung, Sanierung, Fassaden, Dämmung, Bodenbeläge und Trockenbau. Kontaktieren Sie uns für Ihr Vorhaben.">
+  <meta name="robots" content="index,follow">
+  <title>Baudekoration Horn GmbH | Gestaltung, Renovierung & Ausbau</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #202923;
+      --ink-2: #2b382f;
+      --paper: #f6f5f0;
+      --white: #fff;
+      --muted: #69736b;
+      --line: #dedfd7;
+      --accent: #b18b62;
+      --accent-dark: #8c6945;
+      --soft: #eae9e1;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'DM Sans', Arial, sans-serif;
+      --heading: 'Manrope', Arial, sans-serif;
+      --wrap: 1180px;
+      --shadow: 0 22px 60px rgba(27, 37, 30, .13);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .wrap { width: min(var(--wrap), calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; color: var(--accent-dark); font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: var(--heading); letter-spacing: -.045em; }
+    h1 { font-size: clamp(2.8rem, 6.2vw, 5.8rem); line-height: .99; font-weight: 600; }
+    h2 { font-size: clamp(2.1rem, 4vw, 3.7rem); line-height: 1.08; font-weight: 600; }
+    h3 { font-size: 1.25rem; line-height: 1.25; font-weight: 700; }
+    .lead { color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.15rem); line-height: 1.8; max-width: 650px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 13px; min-height: 54px; padding: 0 23px; border: 1px solid transparent; background: var(--accent); color: #fff; font-size: .87rem; font-weight: 700; letter-spacing: .01em; transition: transform .25s ease, background .25s ease, border-color .25s ease; }
+    .button:hover { background: var(--accent-dark); transform: translateY(-2px); }
+    .button .arrow { font-size: 1.05rem; transition: transform .2s ease; }
+    .button:hover .arrow { transform: translate(3px, -2px); }
+    .button-outline { background: transparent; border-color: rgba(255,255,255,.5); color: white; }
+    .button-outline:hover { background: white; color: var(--ink); border-color: white; }
+    .button-dark { background: var(--ink); }
+    .button-dark:hover { background: #354238; }
+    .section { padding: 112px 0; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 48px; }
+    .section-heading h2 { max-width: 680px; margin: 15px 0 0; }
+    .section-heading .lead { max-width: 390px; margin-bottom: 5px; }
+
+    /* Navigation */
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(246,245,240,.95); border-bottom: 1px solid rgba(32,41,35,.1); backdrop-filter: blur(16px); }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .brand-mark { width: 39px; height: 39px; display: grid; place-items: center; border: 1px solid var(--accent); color: var(--accent-dark); font-family: var(--serif); font-size: 1.5rem; line-height: 1; }
+    .brand-copy { display: flex; flex-direction: column; line-height: 1.2; }
+    .brand-copy strong { font-family: var(--heading); font-size: .83rem; letter-spacing: .1em; }
+    .brand-copy span { color: var(--muted); font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; margin-top: 5px; }
+    .nav-links { display: flex; align-items: center; gap: clamp(18px, 2.7vw, 35px); margin-left: auto; }
+    .nav-links a { color: #3f4941; font-size: .82rem; font-weight: 600; transition: color .2s; }
+    .nav-links a:hover { color: var(--accent-dark); }
+    .nav-cta { min-height: 46px; padding-inline: 17px; font-size: .8rem; }
+    .menu-toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
+    .menu-toggle span { display: block; width: 18px; height: 1px; background: currentColor; margin: 5px auto; }
+
+    /* Hero */
+    .hero { min-height: min(760px, calc(100svh - 82px)); position: relative; display: flex; align-items: center; isolation: isolate; overflow: hidden; background: #29352d; color: white; }
+    .hero::before { content: ''; position: absolute; z-index: -2; inset: 0; background: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=88') center 52% / cover no-repeat; transform: scale(1.015); }
+    .hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(20,29,23,.88) 0%, rgba(20,29,23,.72) 42%, rgba(20,29,23,.2) 100%), linear-gradient(0deg, rgba(20,29,23,.35), transparent 50%); }
+    .hero-content { padding: 105px 0 112px; max-width: 780px; }
+    .hero .eyebrow { color: #d5b58f; }
+    .hero h1 { max-width: 790px; margin: 24px 0 25px; }
+    .hero h1 em { color: #d6b68e; font-family: var(--serif); font-weight: 400; }
+    .hero-copy { max-width: 560px; color: rgba(255,255,255,.78); font-size: 1.08rem; line-height: 1.8; margin-bottom: 34px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
+    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 62px; color: rgba(255,255,255,.7); font-size: .75rem; letter-spacing: .06em; }
+    .hero-note::before { content: ''; width: 40px; height: 1px; background: var(--accent); }
+    .hero-index { position: absolute; right: max(24px, calc((100vw - var(--wrap)) / 2)); bottom: 55px; writing-mode: vertical-rl; color: rgba(255,255,255,.6); font-size: .66rem; letter-spacing: .2em; }
+
+    /* Proof strip */
+    .proof-strip { background: var(--ink); color: white; }
+    .proof-grid { display: grid; grid-template-columns: repeat(3,1fr); }
+    .proof-item { display: flex; align-items: center; gap: 17px; min-height: 112px; padding: 20px 28px; border-right: 1px solid rgba(255,255,255,.13); }
+    .proof-item:first-child { padding-left: 0; }
+    .proof-item:last-child { border-right: 0; }
+    .proof-icon { width: 40px; height: 40px; border: 1px solid rgba(210,177,139,.55); color: #d7b78f; display: grid; place-items: center; flex-shrink: 0; }
+    .proof-icon svg { width: 19px; height: 19px; }
+    .proof-item strong { display: block; font-family: var(--heading); font-size: .91rem; font-weight: 700; }
+    .proof-item span { display: block; color: rgba(255,255,255,.6); font-size: .76rem; margin-top: 2px; }
+
+    /* Intro */
+    .intro-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 9%; align-items: start; }
+    .intro-aside { position: relative; padding-top: 10px; }
+    .intro-aside::before { content: 'H'; position: absolute; top: -80px; left: -26px; z-index: -1; color: rgba(177,139,98,.12); font-family: var(--serif); font-size: 17rem; line-height: 1; }
+    .intro-aside p { max-width: 360px; color: var(--muted); }
+    .intro-main h2 { margin: 18px 0 24px; }
+    .intro-main p { color: var(--muted); }
+    .text-link { display: inline-flex; align-items: center; gap: 11px; margin-top: 15px; color: var(--accent-dark); font-weight: 700; font-size: .87rem; }
+    .text-link span { transition: transform .2s ease; }
+    .text-link:hover span { transform: translateX(4px); }
+
+    /* Services */
+    .services { background: #eeede6; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #d8d8cf; border-left: 1px solid #d8d8cf; }
+    .service-card { position: relative; min-height: 248px; padding: 31px 30px 28px; border-right: 1px solid #d8d8cf; border-bottom: 1px solid #d8d8cf; background: transparent; transition: background .25s ease, transform .25s ease; }
+    .service-card:hover { background: rgba(255,255,255,.7); }
+    .service-no { color: var(--accent-dark); font-size: .69rem; font-weight: 700; letter-spacing: .14em; }
+    .service-card h3 { margin: 27px 0 11px; }
+    .service-card p { max-width: 310px; margin-bottom: 0; color: var(--muted); font-size: .88rem; line-height: 1.75; }
+    .service-corner { position: absolute; top: 28px; right: 28px; color: #a9a99e; font-size: 1.1rem; }
+
+    /* Image feature */
+    .feature { display: grid; grid-template-columns: 1.05fr .95fr; min-height: 570px; background: var(--ink); color: white; }
+    .feature-image { min-height: 480px; background: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85') center / cover no-repeat; }
+    .feature-content { display: flex; flex-direction: column; justify-content: center; padding: 85px clamp(35px, 6vw, 95px); }
+    .feature .eyebrow { color: #d5b58f; }
+    .feature h2 { margin: 18px 0 23px; }
+    .feature p { max-width: 510px; color: rgba(255,255,255,.68); }
+    .feature-points { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 28px; margin-top: 28px; }
+    .feature-point { display: flex; gap: 11px; align-items: flex-start; font-size: .85rem; color: rgba(255,255,255,.86); }
+    .feature-point b { color: #d5b58f; font-size: .8rem; }
+
+    /* Process */
+    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 42px; margin-top: 48px; }
+    .process-item { border-top: 1px solid var(--line); padding-top: 25px; }
+    .process-number { font-family: var(--serif); color: var(--accent); font-size: 2.4rem; line-height: 1; }
+    .process-item h3 { margin: 22px 0 10px; }
+    .process-item p { max-width: 330px; color: var(--muted); font-size: .9rem; }
+
+    /* Gallery */
+    .gallery { background: #eae9e1; }
+    .gallery-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; grid-template-rows: 260px 190px; gap: 16px; }
+    .gallery-card { position: relative; overflow: hidden; background: #c9c8bd; }
+    .gallery-card:first-child { grid-row: 1 / span 2; }
+    .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.75,.25,1); }
+    .gallery-card:hover img { transform: scale(1.04); }
+    .gallery-caption { position: absolute; left: 18px; bottom: 18px; padding: 9px 13px; background: rgba(32,41,35,.82); color: white; font-size: .72rem; letter-spacing: .04em; }
+    .gallery-disclaimer { margin: 15px 0 0; color: #70776e; font-size: .72rem; }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 9%; align-items: center; }
+    .about-art { position: relative; min-height: 480px; background: url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85') center / cover no-repeat; }
+    .about-art::after { content: ''; position: absolute; inset: 18px -18px -18px 18px; z-index: -1; border: 1px solid var(--accent); }
+    .about-copy h2 { margin: 18px 0 22px; }
+    .about-copy p { color: var(--muted); }
+    .about-note { display: flex; gap: 15px; align-items: flex-start; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); }
+    .about-note-mark { color: var(--accent-dark); font-family: var(--serif); font-size: 2rem; line-height: 1; }
+    .about-note strong { display: block; font-family: var(--heading); font-size: .9rem; }
+    .about-note span { color: var(--muted); font-size: .8rem; }
+
+    /* Contact */
+    .contact { background: var(--ink); color: white; }
+    .contact-grid { display: grid; grid-template-columns: 1fr .82fr; gap: 10%; align-items: start; }
+    .contact .eyebrow { color: #d5b58f; }
+    .contact h2 { max-width: 650px; margin: 18px 0 23px; }
+    .contact-copy { color: rgba(255,255,255,.66); max-width: 530px; }
+    .contact-details { margin-top: 33px; display: flex; flex-wrap: wrap; gap: 14px; }
+    .contact-card { padding: 23px; border: 1px solid rgba(255,255,255,.18); }
+    .contact-card small { display: block; color: #d5b58f; font-size: .67rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; margin-bottom: 10px; }
+    .contact-card a, .contact-card address { color: white; font-style: normal; font-family: var(--heading); font-size: 1rem; font-weight: 600; }
+    .contact-card a:hover { color: #d5b58f; }
+    .contact-side { padding: 35px; background: #2c382f; border: 1px solid rgba(255,255,255,.1); }
+    .contact-side h3 { margin-bottom: 20px; }
+    .info-row { padding: 15px 0; border-top: 1px solid rgba(255,255,255,.13); }
+    .info-row span { display: block; color: rgba(255,255,255,.57); font-size: .73rem; margin-bottom: 3px; }
+    .info-row strong { color: white; font-size: .9rem; font-weight: 600; }
+    .contact-side p { margin: 16px 0 0; color: rgba(255,255,255,.56); font-size: .78rem; }
+
+    /* Footer */
+    .footer { background: #17201a; color: white; padding: 33px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 25px; }
+    .footer .brand-copy span { color: rgba(255,255,255,.5); }
+    .footer-meta { color: rgba(255,255,255,.55); font-size: .72rem; text-align: right; }
+    .footer-meta a { color: rgba(255,255,255,.8); }
+    .footer-meta a:hover { color: white; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 900px) {
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: .76rem; }
+      .nav-cta { display: none; }
+      .section { padding: 85px 0; }
+      .section-heading { display: block; }
+      .section-heading .lead { margin-top: 20px; }
+      .intro-grid, .about-grid { gap: 45px; }
+      .feature-content { padding: 65px 40px; }
+      .gallery-grid { grid-template-rows: 220px 170px; }
+    }
+    @media (max-width: 700px) {
+      .wrap { width: min(var(--wrap), calc(100% - 36px)); }
+      .nav { min-height: 72px; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; padding: 20px 22px 25px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 13px 0; border-bottom: 1px solid var(--line); font-size: .9rem; }
+      .hero { min-height: 690px; }
+      .hero::before { background-position: 57% center; }
+      .hero::after { background: linear-gradient(90deg, rgba(20,29,23,.88), rgba(20,29,23,.55)), linear-gradient(0deg, rgba(20,29,23,.5), transparent); }
+      .hero-content { padding: 85px 0 105px; }
+      .hero h1 { font-size: clamp(2.8rem, 13vw, 4.3rem); }
+      .hero-copy { font-size: .98rem; }
+      .hero-note { margin-top: 48px; }
+      .hero-index { display: none; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .proof-item, .proof-item:first-child { min-height: 85px; padding: 17px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.13); }
+      .proof-item:last-child { border-bottom: 0; }
+      .section { padding: 72px 0; }
+      .intro-grid, .about-grid, .contact-grid, .feature { grid-template-columns: 1fr; }
+      .intro-aside::before { font-size: 12rem; top: -50px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 205px; }
+      .feature-image { min-height: 330px; }
+      .feature-content { padding: 65px 25px 70px; }
+      .feature-points { grid-template-columns: 1fr; gap: 14px; }
+      .process-grid { grid-template-columns: 1fr; gap: 25px; }
+      .process-item { padding-top: 20px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 170px; gap: 10px; }
+      .gallery-card:first-child { grid-column: 1 / span 2; grid-row: auto; }
+      .gallery-caption { left: 10px; bottom: 10px; font-size: .65rem; }
+      .about-art { min-height: 340px; margin-right: 12px; }
+      .contact-grid { gap: 42px; }
+      .contact-details { display: grid; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .footer-meta { text-align: left; line-height: 1.8; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HousePainter",
+    "name": "Baudekoration Horn GmbH",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Gartenstraße 11",
+      "postalCode": "64331",
+      "addressLocality": "Weiterstadt",
+      "addressCountry": "DE"
+    },
+    "telephone": "+49 6150 590099",
+    "email": "info@baudekoration-horn.de",
+    "areaServed": "Weiterstadt und Umgebung"
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#start" aria-label="Baudekoration Horn – Startseite">
+        <span class="brand-mark">H</span>
+        <span class="brand-copy"><strong>BAUDEKORATION HORN</strong><span>Gestaltung · Renovierung · Ausbau</span></span>
+      </a>
+      <nav class="nav-links" id="primary-navigation" aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#arbeitsweise">Arbeitsweise</a>
+        <a href="#unternehmen">Unternehmen</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="button button-dark nav-cta" href="#kontakt">Projekt anfragen <span class="arrow">↗</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="wrap">
+        <div class="hero-content reveal">
+          <span class="eyebrow">Baudekoration Horn GmbH · Weiterstadt</span>
+          <h1>Räume gestalten.<br><em>Werte erhalten.</em></h1>
+          <p class="hero-copy">Von Maler- und Tapezierarbeiten bis zu Renovierung, Fassadengestaltung und Innenausbau – entdecken Sie die Möglichkeiten für Ihr nächstes Vorhaben.</p>
+          <div class="hero-actions">
+            <a class="button" href="#kontakt">Anfrage stellen <span class="arrow">↗</span></a>
+            <a class="button button-outline" href="#leistungen">Leistungen entdecken <span class="arrow">↓</span></a>
+          </div>
+          <div class="hero-note">Handwerkliche Leistungen für Innen- und Außenbereiche</div>
+        </div>
+      </div>
+      <span class="hero-index">WEITERSTADT · HESSEN</span>
+    </section>
+
+    <section class="proof-strip" aria-label="Unternehmensinformationen">
+      <div class="wrap proof-grid">
+        <div class="proof-item">
+          <span class="proof-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 9h.01M15 9h.01"/></svg></span>
+          <div><strong>In Weiterstadt</strong><span>Gartenstraße 11 · 64331</span></div>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5"/></svg></span>
+          <div><strong>Viele Leistungen</strong><span>Von Renovierung bis Trockenbau</span></div>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><strong>Bürozeiten</strong><span>Montag bis Freitag · 8–12 Uhr</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap intro-grid">
+        <div class="intro-aside reveal">
+          <span class="eyebrow">Handwerk für Ihr Zuhause</span>
+          <p>Ob einzelne Räume, die Fassade oder eine umfassendere Sanierung: Jedes Vorhaben beginnt mit einer klaren Vorstellung davon, was entstehen soll.</p>
+        </div>
+        <div class="intro-main reveal">
+          <h2>Ein gutes Ergebnis beginnt mit dem richtigen Blick fürs Ganze.</h2>
+          <p>Baudekoration Horn GmbH bietet ein vielseitiges Leistungsspektrum rund um die Gestaltung, Modernisierung und Instandsetzung von Gebäuden. Dazu gehören Arbeiten im Innenbereich ebenso wie Maßnahmen an Fassaden und Außenflächen.</p>
+          <p>Informieren Sie sich über die Möglichkeiten und sprechen Sie mit dem Unternehmen über Ihr konkretes Projekt.</p>
+          <a class="text-link" href="#leistungen">Leistungsspektrum ansehen <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="leistungen">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Was wir anbieten</span><h2>Leistungen für Innen und Außen.</h2></div>
+          <p class="lead">Ein vielseitiges Spektrum für Renovierung, Gestaltung und Instandsetzung – übersichtlich nach Bereichen gegliedert.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal"><span class="service-no">01 / INNENRÄUME</span><span class="service-corner">↗</span><h3>Maler- & Tapezierarbeiten</h3><p>Wand- und Deckengestaltung für ein stimmiges Erscheinungsbild Ihrer Räume.</p></article>
+          <article class="service-card reveal"><span class="service-no">02 / MODERNISIERUNG</span><span class="service-corner">↗</span><h3>Renovierung & Sanierung</h3><p>Arbeiten zur Erneuerung und Instandsetzung von Bestandsflächen und Gebäuden.</p></article>
+          <article class="service-card reveal"><span class="service-no">03 / FASSADE</span><span class="service-corner">↗</span><h3>Fassadenanstrich & Dämmung</h3><p>Maßnahmen für die äußere Gestaltung und die energetische Verbesserung von Gebäuden.</p></article>
+          <article class="service-card reveal"><span class="service-no">04 / BODEN</span><span class="service-corner">↗</span><h3>Bodenbelagsarbeiten</h3><p>Neue Oberflächen und Beläge für unterschiedliche Räume und Nutzungen.</p></article>
+          <article class="service-card reveal"><span class="service-no">05 / AUSBAU</span><span class="service-corner">↗</span><h3>Trockenbau & Beschichtung</h3><p>Trockenbau sowie Beschichtungen für Böden, Balkone und weitere Flächen.</p></article>
+          <article class="service-card reveal"><span class="service-no">06 / INSTANDSETZUNG</span><span class="service-corner">↗</span><h3>Schimmel- & Schadensanierung</h3><p>Leistungen im Zusammenhang mit Schimmel-, Wasser- und Brandschäden.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature" id="arbeitsweise">
+      <div class="feature-image" role="img" aria-label="Helles, modern gestaltetes Wohninterieur als beispielhafte Bildstimmung"></div>
+      <div class="feature-content reveal">
+        <span class="eyebrow">Gut geplant</span>
+        <h2>Aus Ideen werden konkrete Vorhaben.</h2>
+        <p>Welche Arbeiten sind sinnvoll? Welche Flächen sollen erneuert werden? Und was ist Ihnen beim Ergebnis besonders wichtig? Ein Gespräch schafft die Grundlage für die nächsten Schritte.</p>
+        <div class="feature-points">
+          <div class="feature-point"><b>01</b><span>Vorhaben und Wünsche besprechen</span></div>
+          <div class="feature-point"><b>02</b><span>Leistungsumfang klären</span></div>
+          <div class="feature-point"><b>03</b><span>Umsetzung gemeinsam abstimmen</span></div>
+          <div class="feature-point"><b>04</b><span>Ergebnis und Details prüfen</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Von der Idee zum Ergebnis</span><h2>Der Weg zu Ihrem Projekt.</h2></div>
+          <p class="lead">Ein einfacher Ablauf hilft dabei, Anforderungen zu sortieren und die passenden Leistungen zu besprechen.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-item reveal"><span class="process-number">01</span><h3>Kontakt aufnehmen</h3><p>Beschreiben Sie kurz, was geplant ist und welche Bereiche betroffen sind.</p></article>
+          <article class="process-item reveal"><span class="process-number">02</span><h3>Details besprechen</h3><p>Der Umfang und die passenden Arbeitsschritte werden zum Vorhaben abgestimmt.</p></article>
+          <article class="process-item reveal"><span class="process-number">03</span><h3>Projekt angehen</h3><p>Auf Grundlage der Vereinbarung können die nächsten Schritte geplant werden.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Räume und Oberflächen</span><h2>Inspiration für die Gestaltung.</h2></div>
+          <p class="lead">Innenräume, Materialien und Oberflächen – entdecken Sie beispielhafte Bildwelten rund um Renovierung und Gestaltung.</p>
+        </div>
+        <div class="gallery-grid reveal">
+          <figure class="gallery-card"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85" alt="Heller Wohnbereich mit zurückhaltender Wand- und Bodengestaltung" loading="lazy"><figcaption class="gallery-caption">Wohnen & Innenräume</figcaption></figure>
+          <figure class="gallery-card"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85" alt="Modern gestalteter Innenraum mit hellen Oberflächen" loading="lazy"><figcaption class="gallery-caption">Oberflächen & Farben</figcaption></figure>
+          <figure class="gallery-card"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85" alt="Modernes Wohnhaus mit gestalteter Außenfassade" loading="lazy"><figcaption class="gallery-caption">Fassade & Außenbereich</figcaption></figure>
+          <figure class="gallery-card"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" alt="Wohnraum mit warmen Materialien und Bodenbelag" loading="lazy"><figcaption class="gallery-caption">Böden & Materialien</figcaption></figure>
+        </div>
+        <p class="gallery-disclaimer">Hinweis: Die gezeigten Fotos sind illustrative Bildbeispiele und keine bestätigten Referenzprojekte der Baudekoration Horn GmbH.</p>
+      </div>
+    </section>
+
+    <section class="section" id="unternehmen">
+      <div class="wrap about-grid">
+        <div class="about-art reveal" role="img" aria-label="Beispielhafte Aufnahme eines modernen Innenraums"></div>
+        <div class="about-copy reveal">
+          <span class="eyebrow">Das Unternehmen</span>
+          <h2>Baudekoration Horn GmbH – in Weiterstadt zuhause.</h2>
+          <p>Als Unternehmen mit Standort in Weiterstadt deckt Baudekoration Horn unterschiedliche Arbeiten rund um Renovierung, Sanierung, Oberflächen und Innenausbau ab.</p>
+          <p>Das Angebot reicht von klassischen Maler- und Tapezierarbeiten bis zu Fassaden-, Boden- und Beschichtungsarbeiten sowie Maßnahmen bei Schäden an Gebäuden.</p>
+          <div class="about-note"><span class="about-note-mark">H</span><div><strong>Baudekoration Horn GmbH</strong><span>Gartenstraße 11 · 64331 Weiterstadt</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="kontakt">
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <span class="eyebrow">Nächster Schritt</span>
+          <h2>Sie planen ein Vorhaben? Sprechen wir darüber.</h2>
+          <p class="contact-copy">Rufen Sie an oder schreiben Sie eine E-Mail mit einer kurzen Beschreibung Ihres Projekts. Das Unternehmen kann Ihnen mitteilen, welche nächsten Schritte sinnvoll sind.</p>
+          <div class="contact-details">
+            <div class="contact-card"><small>Telefon</small><a href="tel:+496150590099">06150 590099</a></div>
+            <div class="contact-card"><small>E-Mail</small><a href="mailto:info@baudekoration-horn.de">info@baudekoration-horn.de</a></div>
+          </div>
+        </div>
+        <aside class="contact-side reveal">
+          <h3>Kontakt & Bürozeiten</h3>
+          <div class="info-row"><span>Adresse</span><strong>Gartenstraße 11<br>64331 Weiterstadt</strong></div>
+          <div class="info-row"><span>Bürozeiten</span><strong>Montag bis Freitag<br>08:00–12:00 Uhr</strong></div>
+          <div class="info-row"><span>Außerhalb der Bürozeiten</span><strong>Anrufbeantworter rund um die Uhr</strong></div>
+          <p>Laut Firmenverzeichnis der Stadt Weiterstadt erfolgt ein Rückruf schnellstmöglich.</p>
+          <a class="button" style="width:100%; margin-top:22px" href="mailto:info@baudekoration-horn.de?subject=Anfrage%20zu%20einem%20Projekt">E-Mail schreiben <span class="arrow">↗</span></a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="#start" aria-label="Zurück nach oben">
+        <span class="brand-mark">H</span>
+        <span class="brand-copy"><strong>BAUDEKORATION HORN</strong><span>Gestaltung · Renovierung · Ausbau</span></span>
+      </a>
+      <div class="footer-meta">© <span id="year"></span> Baudekoration Horn GmbH · Weiterstadt<br>Website-Konzept / Bildmotive illustrativ. Impressum und Datenschutzhinweise vor einer Veröffentlichung ergänzen und rechtlich prüfen.</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menu-toggle');
+    const nav = document.getElementById('primary-navigation');
+    menuButton.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Menü öffnen');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add('is-visible'));
+    }
+  </script>
+</body>
+</html>
